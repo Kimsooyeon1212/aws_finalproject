@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.example.demo.MyWebConfig;
+
 import jakarta.servlet.http.HttpSession;
 
 @Controller
@@ -70,7 +72,7 @@ public class MemberController {
 	public ModelAndView  memberinsert(MemberDTO dto) throws IOException{
 		//dto.setxxxx(xxx파라미터자동저장)
 		
-		String savePath = "c:/upload/";
+		String savePath = MyWebConfig.savePath;
 		MultipartFile imagefile = dto.getImagefile();
 
 		//파일명1 추출
